@@ -1,0 +1,12 @@
+import { BarChart3, Building2, ChevronLeft, ChevronRight, CloudRain, HeartPulse, Home, LayoutDashboard, Menu, ShieldAlert, Sprout, UserRound, Users, X } from "lucide-react";
+
+const groups = [
+  { label: "Main", items: [{ label: "Overview", path: "/", icon: Home }, { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard }] },
+  { label: "Community Services", items: [{ label: "Agriculture", path: "/agriculture", icon: Sprout }, { label: "Rural Development", path: "/rural-development", icon: CloudRain }, { label: "Health Services", path: "/health-services", icon: HeartPulse }] },
+  { label: "Response Network", items: [{ label: "Emergency Services", path: "/emergency", icon: ShieldAlert }, { label: "Government Services", path: "/government-services", icon: Building2 }] },
+  { label: "Explore", items: [{ label: "Challenges", path: "/challenges", icon: Users }, { label: "Profile", path: "/about", icon: UserRound }] },
+];
+
+export default function DisasterSidebar({ path, navigate }) {
+  return <aside className="jn-sidebar"><div className="jn-sidebar-brand"><span className="jn-logo-mark"><ShieldAlert size={17} /></span><span>JAN<b>SETU</b></span><small>DISASTER MANAGEMENT</small></div><div className="jn-sidebar-status"><span /> Network operational <b>INDIA</b></div><nav>{groups.map(group => <div className="jn-sidebar-group" key={group.label}><span className="jn-sidebar-label">{group.label}</span>{group.items.map(({ label, path: itemPath, icon: Icon }) => <button key={itemPath} className={path === itemPath || (itemPath !== "/" && path.startsWith(itemPath)) ? "active" : ""} onClick={() => navigate(itemPath)}><Icon size={17} /><span>{label}</span>{path === itemPath && <ChevronRight size={14} className="jn-sidebar-arrow" />}</button>)}</div>)}</nav><div className="jn-sidebar-sos"><ShieldAlert size={20} /><div><b>Need immediate help?</b><span>Open emergency response</span></div><button onClick={() => navigate("/emergency")}>SOS <ChevronRight size={14} /></button></div><div className="jn-sidebar-collapse"><span><Users size={16} /> Community network</span><button aria-label="Collapse navigation"><ChevronLeft size={15} /></button></div></aside>;
+}
