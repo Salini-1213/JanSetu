@@ -22,6 +22,15 @@ npm run dev
 
 Open the app at [http://localhost:5173](http://localhost:5173).
 
+## Citizen Registration
+
+On the first visit, a registration form appears before the home page. Required
+fields are starred (name, country, state/city, phone, email, gender); caste,
+age and occupation are optional and can be added later. The profile is stored
+in the browser's `localStorage` — the Dashboard greets the citizen by name and
+the Profile page tracks completion, benefits and account actions (edit,
+sign out).
+
 To run from inside the `client/` folder directly:
 
 ```bash
@@ -46,7 +55,8 @@ Output is generated in `client/dist/`.
 | `/report` | Five-step problem submission wizard |
 | `/challenges` | Explore reported challenges |
 | `/challenges/:id` | Challenge detail with AI analysis |
-| `/dashboard` | Citizen problem dashboard |
+| `/dashboard` | Citizen problem dashboard (greets you by name) |
+| `/profile` | Your citizen profile — information, completion and benefits |
 | `/impact` | National impact analytics |
 | `/universities` | University collaboration network |
 | `/industry` | Industry connect network |
@@ -75,9 +85,14 @@ client/
       DisasterServices.jsx  # Domain service pages (agriculture, health, ...)
       SubmitProblem.jsx     # Standalone problem wizard (uses indiaLocations)
       SubmitProblem.css
+      UserGate.jsx          # Registration form shown before the home page
+      ProfileForm.jsx       # Shared profile form (registration + edit)
+      ProfilePage.jsx       # Citizen profile, completion and benefits
+      Account.css           # Account UI styles
     data/
       jansetuMockData.js  # Mock problems, universities, industries, analytics
       indiaLocations.js   # India states/districts reference data
     services/
-      jansetuApi.js       # API adapter over mock data
+      jansetuApi.js         # API adapter over mock data
+      userProfileService.js # localStorage citizen profile + completion tracker
 ```
