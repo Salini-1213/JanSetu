@@ -1,0 +1,232 @@
+/* Role-based auth & dashboards — shared styles for RBAC components, the signup
+   role picker, Demo Mode and the four role dashboards. Loaded after jansetu.css
+   so it can extend the dark contrast theme tokens. */
+
+/* ---- Role sidebar (RoleShell) ---- */
+.jn-role-nav { gap: 0; }
+.jn-role-nav-head { display: flex; align-items: center; gap: 11px; padding: 0 8px 16px; margin-bottom: 14px; border-bottom: 1px solid #29414e; }
+.jn-role-nav-head b { display: block; color: #f4fbff; font: 800 15px Manrope; }
+.jn-role-nav-head small { display: block; margin-top: 2px; color: #78939d; font-size: 10px; }
+.jn-role-emoji { display: grid; place-items: center; width: 38px; height: 38px; flex: 0 0 auto; border-radius: 9px; background: #12333f; font-size: 21px; }
+.jn-role-nav > .jn-vbadge { align-self: flex-start; margin: 0 8px 10px; }
+.jn-role-nav .jn-role-org { display: block; margin: 0 8px 14px; color: #8ba3ac; font-size: 10px; line-height: 1.45; }
+.jn-role-nav nav { display: grid; gap: 3px; align-content: start; }
+.jn-role-nav nav button { width: 100%; display: flex; align-items: center; gap: 11px; padding: 10px 11px; border: 1px solid transparent; border-radius: 6px; background: none; color: #9eb5bc; text-align: left; font-size: 12px; }
+.jn-role-nav nav button:hover { background: #163644; color: #f4fbff; }
+.jn-role-nav nav button.active { background: #16483f; border-color: #2b7b6a; color: #7af0d0; }
+.jn-demo-flag { margin: 14px 8px 0; padding: 8px 10px; border: 1px solid #7a5f2a; border-radius: 6px; background: #3a2f14; color: #ffcf7a; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-align: center; }
+
+/* ---- Verification badge ---- */
+.jn-vbadge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid; border-radius: 20px; font-size: 10px; font-weight: 800; }
+.jn-vbadge.verified { color: #8be28a; border-color: #2f6b45; background: #123324; }
+.jn-vbadge.pending { color: #ffc48e; border-color: #7a5a34; background: #33261a; }
+.jn-vbadge.required { color: #ff9d80; border-color: #7a3f34; background: #33201c; }
+
+/* ---- Role switcher ---- */
+.jn-role-switch { position: relative; margin: 14px 8px 0; }
+.jn-role-switch-btn { width: 100%; display: flex; align-items: center; gap: 8px; padding: 10px 11px; border: 1px solid #35515b; border-radius: 6px; background: #102733; color: var(--jn-blue); font-size: 11px; font-weight: 700; }
+.jn-role-switch-btn:hover { background: #173b4a; }
+.jn-role-switch-menu { position: absolute; bottom: calc(100% + 8px); left: 0; right: 0; z-index: 30; display: grid; gap: 4px; padding: 10px; border: 1px solid #35515b; border-radius: 8px; background: #0c202c; box-shadow: 0 18px 40px #0009; }
+.jn-role-switch-menu > span { padding: 2px 4px 6px; color: #78939d; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+.jn-role-switch-menu button { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 10px; border: 1px solid transparent; border-radius: 6px; background: none; color: #c3d6dc; font-size: 12px; }
+.jn-role-switch-menu button:hover { background: #163644; }
+.jn-role-switch-menu button.active { background: #16483f; border-color: #2b7b6a; color: #7af0d0; }
+
+/* ---- Verification notice (limited mode banner) ---- */
+.jn-verify-notice { display: flex; align-items: center; gap: 16px; padding: 16px 18px; margin-bottom: 22px; border: 1px solid; border-radius: 10px; }
+.jn-verify-notice.pending { background: #2a2115; border-color: #7a5a34; }
+.jn-verify-notice.required { background: #2a1a17; border-color: #7a3f34; }
+.jn-verify-notice-icon { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 auto; border-radius: 10px; }
+.jn-verify-notice.pending .jn-verify-notice-icon { background: #3d2f1c; color: #ffc48e; }
+.jn-verify-notice.required .jn-verify-notice-icon { background: #3d211c; color: #ff9d80; }
+.jn-verify-notice-copy { flex: 1; min-width: 0; }
+.jn-verify-notice-copy b { display: block; margin-bottom: 4px; color: #ffe0bd; font: 700 14px Manrope; }
+.jn-verify-notice.required .jn-verify-notice-copy b { color: #ffd1c4; }
+.jn-verify-notice-copy p { color: #dcc7ab; font-size: 12px; line-height: 1.5; }
+.jn-verify-notice.required .jn-verify-notice-copy p { color: #e0bdb2; }
+.jn-verify-approve { flex: 0 0 auto; }
+
+/* ---- Access denied ---- */
+.jn-denied { max-width: 640px; margin: 8vh auto; padding: 44px 40px; text-align: center; border: 1px solid var(--jn-line); border-radius: 14px; background: #10232f; }
+.jn-denied-icon { display: grid; place-items: center; width: 66px; height: 66px; margin: 0 auto 20px; border: 1px solid #7a3f34; border-radius: 50%; background: #33201c; color: #ff9d80; }
+.jn-denied .jn-eyebrow { justify-content: center; }
+.jn-denied h1 { margin: 12px 0 14px; color: var(--jn-navy); font: 800 30px/1.15 Manrope; letter-spacing: -.04em; }
+.jn-denied p { color: var(--jn-muted); font-size: 13px; line-height: 1.6; }
+.jn-denied code { padding: 2px 6px; border-radius: 5px; background: #0e2531; color: var(--jn-blue); font-size: 12px; }
+.jn-denied-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 26px; }
+
+/* ---- Navbar role links ---- */
+.jn-nav-links { display: flex; align-items: center; gap: 22px; }
+.jn-nav-links button { border: 0; background: none; color: var(--jn-navy); font-size: 12.5px; font-weight: 600; opacity: .82; }
+.jn-nav-links button:hover { color: var(--jn-orange); opacity: 1; }
+.jn-nav-links button.active { color: var(--jn-teal); opacity: 1; }
+
+/* ---- Signup: role picker ---- */
+.jn-roleselect-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.jn-role-card { display: flex; flex-direction: column; gap: 7px; padding: 18px; border: 1px solid var(--jn-line); border-radius: 10px; background: #0e2531; text-align: left; transition: transform .2s, border-color .2s, background .2s; }
+.jn-role-card:hover { transform: translateY(-2px); border-color: #4f8790; }
+.jn-role-card.selected { border-color: var(--jn-teal); background: #12332f; box-shadow: 0 0 0 3px #35d0b122; }
+.jn-role-card-emoji { font-size: 24px; }
+.jn-role-card b { color: var(--jn-navy); font: 700 15px Manrope; }
+.jn-role-card p { flex: 1; color: var(--jn-muted); font-size: 11.5px; line-height: 1.5; }
+.jn-role-card small { color: #8ba3ac; font-size: 10px; font-weight: 600; }
+
+.jn-role-assist { margin-top: 18px; padding: 16px; border: 1px solid #2f6d86; border-radius: 10px; background: #0f2a37; }
+.jn-role-assist-head { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; color: var(--jn-blue); font-size: 12px; font-weight: 800; }
+.jn-role-assist input { width: 100%; padding: 11px 13px; border: 1px solid #3a5965; border-radius: 7px; background: #102733; color: var(--jn-navy); font: 13px 'DM Sans'; outline: 0; }
+.jn-role-assist input:focus { border-color: var(--jn-blue); box-shadow: 0 0 0 3px #65c7f233; }
+.jn-role-assist-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.jn-role-assist-actions .jn-btn { padding: 10px 16px; }
+.jn-role-example { padding: 8px 11px; border: 1px dashed #3a5965; border-radius: 20px; background: none; color: #8ba3ac; font-size: 10.5px; }
+.jn-role-example:hover { border-color: var(--jn-blue); color: var(--jn-blue); }
+.jn-role-assist-result { margin-top: 12px; padding: 11px 13px; border: 1px solid #2b7b6a; border-radius: 8px; background: #12332f; color: #c9f2e6; font-size: 12px; }
+.jn-role-assist-result b { color: #7af0d0; }
+.jn-role-assist-result button { margin-left: 8px; border: 0; background: none; color: var(--jn-orange); font-size: 11px; font-weight: 800; text-decoration: underline; }
+
+.jn-roleselect .jn-role-org { display: grid; gap: 14px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--jn-line); }
+.jn-roleselect .jn-role-org label { display: grid; gap: 8px; color: var(--jn-muted); font-size: 12px; font-weight: 700; }
+.jn-roleselect .jn-role-org label b { color: var(--jn-orange); }
+.jn-roleselect .jn-role-org input { width: 100%; padding: 12px 13px; border: 1px solid #3a5965; border-radius: 7px; background: #102733; color: var(--jn-navy); font: 14px 'DM Sans'; outline: 0; }
+.jn-roleselect .jn-role-org input:focus { border-color: var(--jn-blue); box-shadow: 0 0 0 3px #65c7f233; }
+.jn-roleselect .jn-role-org .jn-select-label { margin: 0; }
+.jn-roleselect .jn-role-org > .jn-btn { justify-self: start; }
+.jn-roleselect .jn-role-org > .jn-btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ---- UserGate: step bar + Demo Mode ---- */
+.jn-gate-rolebar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.jn-gate-rolebar .jn-text-button { margin: 0; }
+.jn-demo-mode { margin-top: 24px; padding-top: 20px; border-top: 1px dashed var(--jn-line); }
+.jn-demo-mode-head b { display: block; color: var(--jn-orange); font: 800 12px Manrope; letter-spacing: .06em; text-transform: uppercase; }
+.jn-demo-mode-head span { display: block; margin: 6px 0 12px; color: var(--jn-muted); font-size: 11.5px; line-height: 1.5; }
+.jn-demo-mode-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.jn-demo-mode-btn { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 13px 8px; border: 1px solid #7a5f2a; border-radius: 9px; background: #241f13; color: #ffcf7a; font-size: 11px; font-weight: 700; transition: transform .2s, background .2s; }
+.jn-demo-mode-btn:hover { transform: translateY(-2px); background: #33291a; }
+.jn-demo-mode-emoji { font-size: 19px; }
+
+/* ---- Dashboard shell ---- */
+.jn-role-page { max-width: 1180px; margin: 0 auto; padding: 30px max(24px, 4vw) 90px; }
+.jn-role-head { margin-bottom: 24px; }
+.jn-role-head h1 { margin: 12px 0 8px; color: var(--jn-navy); font: 800 clamp(28px, 3.4vw, 40px)/1.1 Manrope; letter-spacing: -.05em; }
+.jn-role-head .jn-subtitle { max-width: 760px; margin-bottom: 0; }
+.jn-role-head .jn-tag { margin-top: 14px; }
+.jn-role-kpis { grid-template-columns: repeat(4, 1fr); gap: 18px 16px; margin-bottom: 22px; }
+.jn-role-panel { margin-bottom: 20px; }
+.jn-role-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.jn-role-panel-head h3 { margin: 8px 0 0; color: var(--jn-navy); font: 700 19px Manrope; }
+.jn-role-panel-head .jn-text-button { margin: 0; }
+
+/* ---- Privileged (lockable) button ---- */
+.jn-priv.locked { border: 1px solid #34525e; background: #243b46; color: #7d979f; opacity: .8; cursor: not-allowed; }
+.jn-priv.locked:hover { transform: none; box-shadow: none; }
+
+/* ---- Tags ---- */
+.jn-tag { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border: 1px solid; border-radius: 20px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.jn-tag.info { color: #99dcf8; border-color: #2f6d86; background: #12303d; }
+.jn-tag.good { color: #8be28a; border-color: #2f6b45; background: #123324; }
+.jn-tag.warn { color: #ffc48e; border-color: #7a5a34; background: #33261a; }
+.jn-tag.bad { color: #ff9d80; border-color: #7a3f34; background: #33201c; }
+.jn-tag.muted { color: #a5bbc4; border-color: #3a5965; background: #152c37; }
+
+/* ---- Empty state + generic role list ---- */
+.jn-role-empty { display: grid; place-items: center; align-content: center; gap: 8px; padding: 40px 20px; text-align: center; color: var(--jn-muted); }
+.jn-role-empty svg { color: var(--jn-teal); opacity: .7; }
+.jn-role-empty b { color: var(--jn-navy); font: 700 15px Manrope; }
+.jn-role-empty p { max-width: 340px; font-size: 12px; line-height: 1.5; }
+.jn-role-list { display: grid; gap: 10px; }
+.jn-role-list-item { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--jn-line); border-radius: 8px; background: #0e2531; }
+.jn-role-list-item:hover { border-color: #3f6b78; }
+.jn-role-list-icon { flex: 0 0 auto; color: var(--jn-teal); }
+.jn-role-list-item > div:nth-child(2) { flex: 1 1 220px; min-width: 0; }
+.jn-role-list-item b { display: block; color: var(--jn-navy); font-size: 13px; }
+.jn-role-list-item span { display: flex; align-items: center; gap: 4px; margin-top: 3px; color: var(--jn-muted); font-size: 11px; }
+.jn-role-list-item .jn-card-tags, .jn-role-list-item .jn-support, .jn-role-list-item .jn-btn { margin: 0; }
+.jn-role-list-item .jn-btn, .jn-role-list-item .jn-tag { flex: 0 0 auto; }
+
+/* ---- Citizen dashboard ---- */
+.jn-citizen-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 22px; }
+.jn-citizen-card { display: flex; flex-direction: column; gap: 8px; padding: 22px 20px; border: 1px solid var(--jn-line); border-radius: 10px; background: #10232f; text-align: left; transition: transform .2s, border-color .2s; }
+.jn-citizen-card:hover { transform: translateY(-3px); border-color: #4f8790; }
+.jn-citizen-card-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 10px; background: #16483f; color: #7af0d0; }
+.jn-citizen-card b { color: var(--jn-navy); font: 700 16px Manrope; }
+.jn-citizen-card p { flex: 1; color: var(--jn-muted); font-size: 12px; line-height: 1.5; }
+.jn-citizen-card-cta { display: flex; align-items: center; gap: 6px; color: var(--jn-teal); font-size: 11px; font-weight: 800; }
+.jn-citizen-reports { display: grid; gap: 16px; }
+.jn-report-row { padding: 18px; border: 1px solid var(--jn-line); border-radius: 9px; background: #0e2531; }
+.jn-report-row-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.jn-report-row-head small { color: #8ba3ac; font-size: 10px; }
+.jn-report-row-head h4 { margin: 6px 0; color: var(--jn-navy); font: 700 16px Manrope; }
+.jn-report-loc { display: flex; align-items: center; gap: 5px; color: var(--jn-muted); font-size: 11px; }
+.jn-report-row-tags { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.jn-report-row-tags .jn-text-button { margin: 0; }
+.jn-life { display: flex; gap: 6px; margin-top: 16px; padding-bottom: 4px; overflow-x: auto; }
+.jn-life > div { flex: 1; min-width: 82px; text-align: center; color: #7d979f; }
+.jn-life span { display: grid; place-items: center; width: 26px; height: 26px; margin: 0 auto 7px; border: 1px solid #33525e; border-radius: 50%; font-size: 10px; }
+.jn-life b { display: block; font-size: 9.5px; font-weight: 700; line-height: 1.3; }
+.jn-life .done span { background: #128276; border-color: #128276; color: #eafffb; }
+.jn-life .done b { color: #7af0d0; }
+.jn-life .current span { background: var(--jn-orange); border-color: var(--jn-orange); color: #24170b; }
+.jn-life .current b { color: var(--jn-orange); }
+
+/* ---- Government dashboard ---- */
+.jn-gov-queue { display: grid; gap: 14px; }
+.jn-gov-item { display: flex; flex-direction: column; gap: 14px; padding: 18px; border: 1px solid var(--jn-line); border-radius: 9px; background: #0e2531; }
+.jn-gov-item-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.jn-gov-item-top small { color: #8ba3ac; font-size: 10px; }
+.jn-gov-item h4 { margin: 8px 0 6px; color: var(--jn-navy); font: 700 16px Manrope; }
+.jn-gov-ai { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 12px; }
+.jn-gov-ai-title { display: flex; align-items: center; gap: 5px; margin-right: 4px; color: var(--jn-teal); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.jn-gov-assigned { display: flex; align-items: center; gap: 6px; margin-top: 10px; color: var(--jn-green); font-size: 11px; }
+.jn-gov-item-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.jn-gov-inline { width: 100%; padding-top: 14px; border-top: 1px dashed var(--jn-line); }
+.jn-gov-inline label { display: grid; gap: 8px; color: var(--jn-muted); font-size: 11px; font-weight: 700; }
+.jn-gov-inline label b { color: var(--jn-orange); }
+.jn-gov-inline textarea, .jn-gov-inline select { width: 100%; padding: 11px; border: 1px solid #3a5965; border-radius: 7px; background: #102733; color: var(--jn-navy); font: 13px 'DM Sans'; outline: 0; resize: vertical; }
+.jn-gov-inline-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+.jn-gov-ai-table { display: grid; gap: 10px; }
+.jn-gov-ai-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 14px; border: 1px solid var(--jn-line); border-radius: 8px; background: #0e2531; }
+.jn-gov-ai-row b { flex: 1 1 200px; color: var(--jn-navy); font-size: 13px; }
+.jn-gov-ai-row .jn-gov-ai { margin: 0; }
+.jn-gov-trends { margin-top: 18px; }
+.jn-gov-shortcuts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.jn-gov-shortcut { display: flex; align-items: center; gap: 8px; padding: 13px 15px; border: 1px solid #3a5965; border-radius: 8px; background: #102733; color: var(--jn-blue); font-size: 12px; font-weight: 700; transition: transform .2s, background .2s; }
+.jn-gov-shortcut:hover { transform: translateY(-2px); background: #173b4a; }
+.jn-audit { display: grid; gap: 8px; }
+.jn-audit-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; padding: 12px 14px; border: 1px solid var(--jn-line); border-radius: 8px; background: #0e2531; }
+.jn-audit-row b { display: block; color: var(--jn-navy); font-size: 12px; }
+.jn-audit-row span { color: var(--jn-muted); font-size: 11px; }
+.jn-audit-row small { color: #8ba3ac; font-size: 10px; line-height: 1.5; text-align: right; }
+.jn-gov-settings { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 18px; }
+.jn-gov-settings > div { padding: 14px 16px; border: 1px solid var(--jn-line); border-radius: 8px; background: #0e2531; }
+.jn-gov-settings span { display: block; margin-bottom: 6px; color: var(--jn-teal); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
+.jn-gov-settings b { color: var(--jn-navy); font-size: 13px; text-transform: capitalize; }
+
+/* ---- University / Industry extras ---- */
+.jn-filter { margin-bottom: 16px; }
+.jn-resource-list { gap: 8px; }
+.jn-resource-list span { padding: 9px 12px; font-size: 12px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+  .jn-citizen-cards { grid-template-columns: repeat(2, 1fr); }
+  .jn-gov-shortcuts { grid-template-columns: repeat(2, 1fr); }
+  .jn-role-kpis { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .jn-role-nav { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 10px; padding: 14px 18px; }
+  .jn-role-nav-head { border: 0; padding: 0; margin: 0; }
+  .jn-role-nav > .jn-vbadge, .jn-role-nav .jn-role-org, .jn-demo-flag { margin: 0; }
+  .jn-role-nav nav { display: flex; gap: 6px; overflow-x: auto; flex: 1 1 100%; order: 5; }
+  .jn-role-nav nav button { width: auto; white-space: nowrap; }
+  .jn-role-switch { margin: 0; }
+  .jn-role-switch-menu { bottom: auto; top: calc(100% + 8px); }
+}
+@media (max-width: 640px) {
+  .jn-roleselect-grid, .jn-demo-mode-grid, .jn-gov-shortcuts, .jn-gov-settings, .jn-citizen-cards { grid-template-columns: 1fr 1fr; }
+  .jn-verify-notice { flex-wrap: wrap; }
+  .jn-verify-approve { width: 100%; justify-content: center; }
+  .jn-denied { padding: 34px 22px; margin: 5vh 16px; }
+  .jn-role-list-item .jn-btn { width: 100%; justify-content: center; }
+}
+@media (max-width: 420px) {
+  .jn-roleselect-grid, .jn-demo-mode-grid, .jn-gov-shortcuts, .jn-gov-settings, .jn-citizen-cards { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,17 @@
+.jn-app-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.jn-app-bg::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(1000px 520px at 80% 12%, rgba(101,199,242,.14), transparent 62%),
+    radial-gradient(760px 460px at 94% 70%, rgba(123,110,255,.14), transparent 64%),
+    radial-gradient(700px 440px at 60% 96%, rgba(53,208,177,.10), transparent 62%);
+}
+.jn-bg-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.3) 26%, #000 55%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.3) 26%, #000 55%, #000 100%);
+}
+.jn-shell > .jn-main-column { position: relative; z-index: 1; }
+@media (max-width: 900px) {
+  .jn-bg-canvas { -webkit-mask-image: none; mask-image: none; opacity: .5; }
+}

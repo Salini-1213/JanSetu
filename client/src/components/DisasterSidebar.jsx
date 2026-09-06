@@ -1,7 +1,7 @@
-import { BarChart3, Building2, ChevronLeft, ChevronRight, CloudRain, FilePlus2, HeartPulse, Home, LayoutDashboard, Menu, Route, Search, ShieldAlert, Sprout, UserRound, Users, X } from "lucide-react";
+import { BarChart3, Building2, ChevronLeft, ChevronRight, CloudRain, FilePlus2, HeartPulse, Home, LayoutDashboard, Lightbulb, Menu, Route, Search, ShieldAlert, Sprout, UserRound, Users, X } from "lucide-react";
 
 const groups = [
-  { label: "Main", items: [{ label: "Overview", path: "/", icon: Home }, { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard }, { label: "Report a Problem", path: "/report", icon: FilePlus2, cta: true }, { label: "Explore Problems", path: "/explore", icon: Search }, { label: "Track my problem", path: "/track", icon: Route }] },
+  { label: "Main", items: [{ label: "Overview", path: "/", icon: Home }, { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard }, { label: "Report a Problem", path: "/report", icon: FilePlus2, cta: true }, { label: "Explore Problems", path: "/explore", icon: Search }, { label: "Track my problem", path: "/track", icon: Route }, { label: "Suggest a Solution", path: "/suggest", icon: Lightbulb }] },
   { label: "Community Services", items: [{ label: "Agriculture", path: "/agriculture", icon: Sprout }, { label: "Rural Development", path: "/rural-development", icon: CloudRain }, { label: "Health Services", path: "/health-services", icon: HeartPulse }] },
   { label: "Response Network", items: [{ label: "Emergency Services", path: "/emergency", icon: ShieldAlert }, { label: "Government Services", path: "/government-services", icon: Building2 }] },
   { label: "Explore", items: [{ label: "Challenges", path: "/challenges", icon: Users }, { label: "Profile", path: "/profile", icon: UserRound }] },

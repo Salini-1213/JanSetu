@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ArrowRight, MapPin, Search, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, Lightbulb, MapPin, Search, ShieldCheck, Users } from "lucide-react";
 import "./ExploreProblems.css";
 
 const problems = [
@@ -61,6 +61,9 @@ function ExploreCard({ problem, navigate }) {
       <p className="jn-explore-priority"><i style={{ background: priorityColor[problem.priority] }} /> {problem.priority} Priority</p>
       <p><Users size={13} /> {problem.people} people affected</p>
     </div>
-    <button className="jn-text-button" onClick={() => navigate(`/challenges/${problem.id}`)}>View Details <ArrowRight size={14} /></button>
+    <div className="jn-explore-actions">
+      <button className="jn-text-button" onClick={() => navigate(`/challenges/${problem.id}`)}>View Details <ArrowRight size={14} /></button>
+      <button className="jn-text-button jn-explore-suggest" onClick={() => navigate(`/suggest?problem=${problem.id}`)}><Lightbulb size={14} /> Suggest a Solution</button>
+    </div>
   </article>;
 }
